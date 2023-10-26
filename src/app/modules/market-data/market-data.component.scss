@@ -1,0 +1,44 @@
+.cajaPorcentaje {
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-weight: 400;
+  display: inline-flex;
+}
+
+.verde {
+  background-color: #81c995;
+}
+
+.rojo {
+  background-color: #f28b82;
+}
+
+/* Estilos para la barra de título */
+.titulo-barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px;
+  color: #fff;
+}
+
+/* Estilos para el texto "PRIME IT" a la izquierda */
+.titulo-izquierda {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilos para el botón de cerrar sesión a la derecha */
+.cerrar-sesion {
+  background-color: #f28b82;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cerrar-sesion:hover {
+  background-color: #d7544f;
+}

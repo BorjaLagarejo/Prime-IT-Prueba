@@ -1,0 +1,22 @@
+/* Estilos para el contenedor principal */
+.center-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Establece la altura al 100% del viewport */
+}
+
+/* Estilos para el botón */
+.center-button {
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-size: 18px; /* Tamaño de fuente del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.center-button:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el cursor */
+}

@@ -1,0 +1,54 @@
+<div class="titulo-barra">
+  <div class="titulo-izquierda">PRIME IT</div>
+  <button class="cerrar-sesion" (click)="signOut()">Cerrar Sesión</button>
+</div>
+
+<table mat-table [dataSource]="dataSource">
+  <!-- title Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Key Data</th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <!-- value1 Column -->
+  <ng-container matColumnDef="value1">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <div [ngSwitch]="element.value1Type">
+        <div *ngSwitchCase="'number'">
+          {{ element.value1 | number }}
+        </div>
+        <div *ngSwitchCase="'percent'">
+          <span
+            *ngIf="element.value1 > 0"
+            class="cajaPorcentaje"
+            [ngClass]="{ verde: element.value1 > 0, rojo: element.value1 < 0 }"
+          >
+            {{ element.value1 > 0 ? "+" : "-" }}
+            {{ element.value1 | number : "1.2-2" }} %
+          </span>
+        </div>
+        <div *ngSwitchDefault>{{ element.value1 }}</div>
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- value2 Column -->
+  <ng-container matColumnDef="value2">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <div [ngSwitch]="element.value2Type">
+        <div *ngSwitchCase="'date'">
+          {{ element.value2 | date : "dd/MM/yyyy" }}
+        </div>
+        <div *ngSwitchCase="'hour'">
+          {{ element.value2 | date : "HH:mm:ss" }}
+        </div>
+        <div *ngSwitchDefault>{{ element.value2 }}</div>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
